@@ -1,6 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+
+:root{
+    --celeste-uno-color: #8ECAE6;
+    --celeste-dos-color: #219EBC;
+    --azul-osc-color: #023047;
+    --naranja-uno-color: #FFB703;
+    --naranja-dos-color: #FB8500;
+}
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+/*** MESAS ***/
+.wrap-mesas{
+    background-color: #fff;
+    border-radius: .2em;
+    padding-right: 0;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.wrap-mesas .titulo-mesas{
+    background-color: var(--naranja-uno-color);
+    font-size: 2em;
+    font-weight: 500;
+    padding-left: .5em;
+    margin-bottom: .2em;
+    color: #fff;
+}
+
+.wrap-mesas .detalles{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.5em;
+}
+
+
+/***  MENU  ***/
+.wrap-menu{
+    background-color: #fff;
+    border-radius: .2em;
+    padding: 1em;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.wrap-menu .titulo-menu{
+    background-color: var(--naranja-dos-color);
+    font-size: 2em;
+    font-weight: 500;
+    padding-left: .5em;
+    margin-bottom: .2em;
+    color: #fff;
+}
+
+.wrap-menu .item{
+    transition: all 1s ease;
+}
+.wrap-menu .item:hover{
+    transform: scale(1.05);
+}
+
+.wrap-menu .click{
+    cursor: pointer;    
+}
+
+.wrap-menu .descripcion {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background-color: var(--celeste-uno-color);
+}
+
+.wrap-menu .descripcion p{
+ font-weight: bold;
+ margin-bottom: 0;
+ font-size: clamp(1rem, 2vw, 1rem);
+}
+
+.wrap-menu .producto{
+    margin-right: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    color: var(--azul-osc-color);
+}
+
+.wrap-menu .producto-precio{
+    background-color: var(--azul-osc-color);
+    color: #fff;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: .5em;
+    padding-bottom: .5em;
 }
