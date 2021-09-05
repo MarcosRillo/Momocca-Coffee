@@ -45,12 +45,65 @@ body{
     justify-content: space-between;
     padding: 0 1.5em;
 }
+.wrap-mesas .N{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--celeste-uno-color);
+    height: 4em;
+    width: 4em;
+    margin-bottom: 0;
+    color: #fff;
+    font-weight: 900;
+    margin-bottom: 2px;
+    margin-right: 2px;
+}
 
-.wrap-mesas .row-head{
+.wrap-mesas .numero-mesa p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--celeste-dos-color);
+    height: 4em;
+    width: 4em;
+    margin-bottom: 0;
+    color: #fff;
+    font-weight: 600;
+    border-right: 1px solid var(--naranja-uno-color);
+    border-bottom: 1px solid var(--naranja-uno-color);
+    border-left: 1px solid var(--naranja-uno-color);
+}
+
+.wrap-mesas .tabla-pedidos{
     width: 100%;
+}
+
+.wrap-mesas .tabla{
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
 }
+
+.wrap-mesas .row-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--celeste-dos-color);
+    height: 4em;
+    padding: 1em;
+}
+
+.wrap-mesas  tbody tr{
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrap-mesas  tbody td{
+    
+    padding: 0.5em 1em;
+}
+
+
 
 /***  MENU  ***/
 .wrap-menu{
