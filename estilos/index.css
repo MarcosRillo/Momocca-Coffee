@@ -46,6 +46,11 @@ body{
     padding: 0 1.5em;
 }
 
+.wrap-mesas .row-head{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
 
 /***  MENU  ***/
 .wrap-menu{
@@ -94,6 +99,7 @@ body{
     padding-top: .5em;
     padding-bottom: .5em;
     color: var(--azul-osc-color);
+    cursor: pointer;
 }
 
 .wrap-menu .producto-precio{
