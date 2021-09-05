@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./estilos/login.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+ 
     <title>Login</title>
 </head>
 <body>
@@ -15,10 +16,10 @@
             <div class="caja">
                 <h3>Momocca Coffee</h3>
                 <p>Inicia sesion para entrar a la pagina</p>
-                <form class="formulario__login">
+                <form onsubmit="login(event)" class="formulario__login">
                     
-                    <input type="text" placeholder="Usuario">
-                    <input type="password" placeholder="Contraseña">
+                    <input type="text" id="usuario" placeholder="Usuario">
+                    <input type="password" id="password" placeholder="Contraseña">
                     <button id="btn__iniciar-sesion">Iniciar Sesion</button>
                 </form>
             </div>
@@ -29,5 +30,7 @@
         </div>
 
     </main>
+    <script src="login.js"></script>
 </body>
+
 </html>
