@@ -1,4 +1,5 @@
-let descripcion = document.getElementsByClassName("descripcion");
+
+let cardProducto = document.getElementsByClassName("card-producto");
 let productos = document.getElementsByClassName("producto");
 let precioProducto = document.getElementsByClassName("producto-precio");
 let table = document.querySelector("table");
@@ -12,23 +13,25 @@ const crearItem = (producto, precio) => {
     precio: precio,
   };
   listaPedidos.push(item);
-  console.log(listaPedidos);
   return item;
 };
 
 //Insertar nombre del producto al array "listaPedidos" al hacer click spbre el
-for (let i = 0; i < descripcion.length; i++) {
-  descripcion[i].addEventListener("click", insertarItem);
+for (let i = 0; i < cardProducto.length; i++) {
+  cardProducto[i].addEventListener("click", insertarItem);
   let producto = productos[i].innerHTML;
   let precio = precioProducto[i].innerHTML;
-  console.log(producto);
 
   function insertarItem(event) {
-    console.log(listaPedidos);
     crearItem(producto, precio);
     guardarLS();
   }
 }
+
+function removerEvento() {
+  cardProducto.removeEventListener
+}
+
 
 //Guardar producto de "listaPedidos" en LocalStorage
 const guardarLS = () => {
@@ -36,18 +39,26 @@ const guardarLS = () => {
   leerLS();
 };
 
-//Insertar en HTML el item al hacer click spbre el [ARREGLAR]
+//Insertar en HTML el item al hacer click sobre el
 const leerLS = () => {
   listaPedidos = JSON.parse(localStorage.getItem("productos"));
   console.log(listaPedidos);
   if (listaPedidos === null) {
     listaPedidos = [];
-  } else {
+  } else if(listaPedidos) {
     tbody.innerHTML = "";
     listaPedidos.forEach((element) => {
       tbody.innerHTML += `<td>${element.producto}</td>
       <td>${element.precio}</td>`;
     });
-  }
+
+    if(listaPedidos.length >= 8){
+      alert('no puede agregar mas ')
+      removerEvento()
+      
+    }
+  } 
+  
 };
+
 leerLS();
