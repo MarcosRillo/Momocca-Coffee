@@ -1,106 +1,167 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-
-:root{
-    --celeste-uno-color: #8ECAE6;
-    --celeste-dos-color: #219EBC;
-    --azul-osc-color: #023047;
-    --naranja-uno-color: #FFB703;
-    --naranja-dos-color: #FB8500;
+:root {
+  --celeste-uno-color: #8ecae6;
+  --celeste-dos-color: #219ebc;
+  --azul-osc-color: #023047;
+  --naranja-uno-color: #ffb703;
+  --naranja-dos-color: #fb8500;
 }
 
-
-body{
-    font-family: 'Roboto', sans-serif;
+body {
+  font-family: "Roboto", sans-serif;
 }
-
-
 
 /*** MESAS ***/
-.wrap-mesas{
-    background-color: #fff;
-    border-radius: .2em;
-    padding-right: 0;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+.wrap-mesas {
+  background-color: #fff;
+  border-radius: 0.2em;
+  padding-right: 0;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
-.wrap-mesas .titulo-mesas{
-    background-color: var(--naranja-uno-color);
-    font-size: 2em;
-    font-weight: 500;
-    padding-left: .5em;
-    margin-bottom: .2em;
-    color: #fff;
+.wrap-mesas .titulo-mesas {
+  background-color: var(--naranja-uno-color);
+  font-size: 2em;
+  font-weight: 500;
+  padding-left: 0.5em;
+  margin-bottom: 0.2em;
+  color: #fff;
 }
 
-.wrap-mesas .detalles{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1.5em;
+.wrap-mesas .detalles {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5em;
+}
+.wrap-mesas .N {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--celeste-uno-color);
+  height: 4em;
+  width: 4em;
+  margin-bottom: 0;
+  color: #fff;
+  font-weight: 900;
+  margin-bottom: 2px;
+  margin-right: 2px;
 }
 
+.wrap-mesas .numero-mesa p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--celeste-dos-color);
+  height: 4em;
+  width: 4em;
+  margin-bottom: 0;
+  color: #fff;
+  font-weight: 600;
+  border-right: 1px solid var(--naranja-uno-color);
+  border-bottom: 1px solid var(--naranja-uno-color);
+  border-left: 1px solid var(--naranja-uno-color);
+}
+
+.wrap-mesas .tabla-pedidos {
+  width: 100%;
+}
+
+.wrap-mesas .tabla {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.wrap-mesas .row-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--celeste-dos-color);
+  height: 4em;
+  padding: 1em;
+}
+
+.wrap-mesas tbody tr {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrap-mesas tbody td {
+  padding: 0.5em 1em;
+}
+
+.wrap-mesas tbody tr:nth-child(even) {
+  background-color: rgb(228, 228, 228);
+}
+
+.wrap-mesas tbody tr:hover {
+  background-color: rgb(194, 193, 193);
+}
 
 /***  MENU  ***/
-.wrap-menu{
-    background-color: #fff;
-    border-radius: .2em;
-    padding: 1em;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+.wrap-menu {
+  background-color: #fff;
+  border-radius: 0.2em;
+  padding: 1em;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
-.wrap-menu .titulo-menu{
-    background-color: var(--naranja-dos-color);
-    font-size: 2em;
-    font-weight: 500;
-    padding-left: .5em;
-    margin-bottom: .2em;
-    color: #fff;
-}
-
-.wrap-menu .item{
-    transition: all 1s ease;
-}
-.wrap-menu .item:hover{
-    transform: scale(1.05);
+.wrap-menu .titulo-menu {
+  background-color: var(--naranja-dos-color);
+  font-size: 2em;
+  font-weight: 500;
+  padding-left: 0.5em;
+  margin-bottom: 0.2em;
+  color: #fff;
 }
 
-.wrap-menu .click{
-    cursor: pointer;    
+.wrap-menu .card-producto {
+  cursor: pointer;
+  transition: all 1s ease;
+}
+.wrap-menu .card-producto:hover {
+  transform: scale(1.05);
+}
+
+.wrap-menu .click {
+  cursor: pointer;
 }
 
 .wrap-menu .descripcion {
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
-    background-color: var(--celeste-uno-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--celeste-uno-color);
 }
 
-.wrap-menu .descripcion p{
- font-weight: bold;
- margin-bottom: 0;
- font-size: clamp(1rem, 2vw, 1rem);
+.wrap-menu .descripcion p {
+  font-weight: bold;
+  margin-bottom: 0;
+  font-size: clamp(1rem, 2vw, 1rem);
 }
 
-.wrap-menu .producto{
-    margin-right: 0.5em;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top: .5em;
-    padding-bottom: .5em;
-    color: var(--azul-osc-color);
+.wrap-menu .producto {
+  margin-right: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  color: var(--azul-osc-color);
+  cursor: pointer;
 }
 
-.wrap-menu .producto-precio{
-    background-color: var(--azul-osc-color);
-    color: #fff;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top: .5em;
-    padding-bottom: .5em;
+.wrap-menu .producto-precio {
+  background-color: var(--azul-osc-color);
+  color: #fff;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
