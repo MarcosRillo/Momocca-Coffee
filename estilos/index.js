@@ -1,4 +1,3 @@
-
 let cardProducto = document.getElementsByClassName("card-producto");
 let productos = document.getElementsByClassName("producto");
 let precioProducto = document.getElementsByClassName("producto-precio");
@@ -23,15 +22,16 @@ for (let i = 0; i < cardProducto.length; i++) {
   let precio = precioProducto[i].innerHTML;
 
   function insertarItem(event) {
-    crearItem(producto, precio);
-    guardarLS();
+    if (listaPedidos.length < 8) {
+      
+      crearItem(producto, precio);
+      guardarLS();
+    }else{
+      alert("No puede agregar mas de 8 productos.");
+    }
+    
   }
 }
-
-function removerEvento() {
-  cardProducto.removeEventListener
-}
-
 
 //Guardar producto de "listaPedidos" en LocalStorage
 const guardarLS = () => {
@@ -45,20 +45,15 @@ const leerLS = () => {
   console.log(listaPedidos);
   if (listaPedidos === null) {
     listaPedidos = [];
-  } else if(listaPedidos) {
+  } else if (listaPedidos) {
     tbody.innerHTML = "";
     listaPedidos.forEach((element) => {
-      tbody.innerHTML += `<td>${element.producto}</td>
+      tbody.innerHTML += `<td> <i class="fas fa-times-circle"></i> ${element.producto}</td>
       <td>${element.precio}</td>`;
     });
 
-    if(listaPedidos.length >= 8){
-      alert('no puede agregar mas ')
-      removerEvento()
-      
-    }
-  } 
-  
+    
+  }
 };
 
 leerLS();
