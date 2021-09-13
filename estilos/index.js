@@ -69,17 +69,14 @@ const eliminarLS = (producto) => {
 // EventListener para señalar que producto vamos a eliminar
 table.addEventListener("click", (e) => {
   e.preventDefault;
+  //console.log(e.composedPath()[2].innerText)  
 
   for (let i = 0; i < botonBorrar.length; i++) {    
-
     if (e.target === botonBorrar[i]) {
-      let contenido = e.path[2].innerText;
+      let contenido = e.composedPath()[2].innerText || e.path[2].innerText  ;
       eliminarLS(contenido);
-    }
-    
-  }
-
-  
+    }    
+  }  
 });
 
 leerLS();
