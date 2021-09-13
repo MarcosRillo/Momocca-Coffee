@@ -117,7 +117,12 @@ body {
   border-radius: 0.2em;
   padding: 1em;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  max-height: 70vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
+
+
 .wrap-menu .titulo-menu {
   background-color: var(--naranja-dos-color);
   font-size: 2em;
