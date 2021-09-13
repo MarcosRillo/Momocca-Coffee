@@ -1,3 +1,4 @@
+let listaItems = document.getElementById('lista-items')
 let cardProducto = document.getElementsByClassName("card-producto");
 let productos = document.getElementsByClassName("producto");
 let precioProducto = document.getElementsByClassName("producto-precio");
@@ -6,7 +7,56 @@ let tbody = document.querySelector("tbody");
 let botonBorrar = document.getElementsByClassName("fa-times-circle");
 let listaPedidos = JSON.parse(localStorage.getItem("productos")) || [];
 
-//se supone que es para crear un arreglo con el precio y producto
+
+/****** INSERTAR CODIGO A HTML DE LOS PRODUCTOS DEL MENU *******/
+
+class productoMenu {
+  constructor(foto, nombre, precio) {
+    this.foto = foto;
+    this.nombre = nombre;
+    this.precio = precio;
+  }
+  insertarHTML() {
+    listaItems.innerHTML += `
+    <div class="card-producto col-12 col-md-6 col-lg-4">
+            <div class="d-flex flex-column">
+              <img
+                src="${this.foto}"
+                class="img-fluid"
+                alt="foto-chocolatada"
+              />
+              <div class="descripcion">
+                <p class="producto" id="nombreProducto">${this.nombre}</p>
+                <p class="producto-precio">${this.precio}</p>
+              </div>
+            </div>
+    </div>
+    `;
+    return this
+  }
+}
+
+const chocolatada = new productoMenu("https://picsum.photos/250/150", "chocolatada", "$100");
+const cafeHelado = new productoMenu("https://picsum.photos/250/150", "cafe heldo", "$90");
+const cafeCaliente = new productoMenu("https://picsum.photos/250/150", "cafe caliente", "$90");
+const jugo = new productoMenu("https://picsum.photos/250/150", "jugo", "$80");
+const teFrio = new productoMenu("https://picsum.photos/250/150", "te frio", "$70");
+const teCaliente = new productoMenu("https://picsum.photos/250/150", "Te caliente", "$70");
+const licuadoConLeche = new productoMenu("https://picsum.photos/250/150", "tlicuado con leche", "$70");
+const licuadoConAgua = new productoMenu("https://picsum.photos/250/150", "licuado con agua", "$70");
+const tostada = new productoMenu("https://picsum.photos/250/150", "tostada", "$70");
+const helado = new productoMenu("https://picsum.photos/250/150", "helado", "$70");
+
+chocolatada.insertarHTML();
+cafeHelado.insertarHTML();
+cafeCaliente.insertarHTML();
+teFrio.insertarHTML();
+teCaliente.insertarHTML();
+licuadoConLeche.insertarHTML();
+tostada.insertarHTML();
+helado.insertarHTML();
+
+// crea un arreglo con el precio y producto
 const crearItem = (producto, precio) => {
   let item = {
     producto: producto,
