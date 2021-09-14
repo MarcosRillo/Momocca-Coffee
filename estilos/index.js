@@ -27,7 +27,7 @@ class productoMenu {
               />
               <div class="descripcion">
                 <p class="producto" id="nombreProducto">${this.nombre}</p>
-                <p class="producto-precio">${this.precio}</p>
+                <p class="estiqueta-precio">$<span class="producto-precio">${this.precio}</span></p>
               </div>
             </div>
     </div>
@@ -36,16 +36,16 @@ class productoMenu {
   }
 }
 
-const chocolatada = new productoMenu("https://picsum.photos/250/150", "chocolatada", "$100");
-const cafeHelado = new productoMenu("https://picsum.photos/250/150", "cafe heldo", "$90");
-const cafeCaliente = new productoMenu("https://picsum.photos/250/150", "cafe caliente", "$90");
-const jugo = new productoMenu("https://picsum.photos/250/150", "jugo", "$80");
-const teFrio = new productoMenu("https://picsum.photos/250/150", "te frio", "$70");
-const teCaliente = new productoMenu("https://picsum.photos/250/150", "Te caliente", "$70");
-const licuadoConLeche = new productoMenu("https://picsum.photos/250/150", "tlicuado con leche", "$70");
-const licuadoConAgua = new productoMenu("https://picsum.photos/250/150", "licuado con agua", "$70");
-const tostada = new productoMenu("https://picsum.photos/250/150", "tostada", "$70");
-const helado = new productoMenu("https://picsum.photos/250/150", "helado", "$70");
+const chocolatada = new productoMenu("https://picsum.photos/250/150", "chocolatada", "100");
+const cafeHelado = new productoMenu("https://picsum.photos/250/150", "cafe heldo", "90");
+const cafeCaliente = new productoMenu("https://picsum.photos/250/150", "cafe caliente", "90");
+const jugo = new productoMenu("https://picsum.photos/250/150", "jugo", "80");
+const teFrio = new productoMenu("https://picsum.photos/250/150", "te frio", "70");
+const teCaliente = new productoMenu("https://picsum.photos/250/150", "Te caliente", "70");
+const licuadoConLeche = new productoMenu("https://picsum.photos/250/150", "tlicuado con leche", "70");
+const licuadoConAgua = new productoMenu("https://picsum.photos/250/150", "licuado con agua", "70");
+const tostada = new productoMenu("https://picsum.photos/250/150", "tostada", "70");
+const helado = new productoMenu("https://picsum.photos/250/150", "helado", "70");
 
 chocolatada.insertarHTML();
 cafeHelado.insertarHTML();
@@ -97,7 +97,7 @@ const leerLS = () => {
     tbody.innerHTML = "";
     listaPedidos.forEach((element) => {
       tbody.innerHTML += `<td><i class="fas fa-times-circle"></i> ${element.producto}</td>
-      <td>${element.precio}</td>`;
+      <td>$${element.precio}</td>`;
     });
   }
 };
@@ -115,6 +115,16 @@ const eliminarLS = (producto) => {
   // guardarLS() guarda el nuevo cambio en LocalStorage
   guardarLS();
 };
+
+//Cerrar Mesa
+const cerrarMesa = () => {
+  let totalPedido =
+  listaPedidos.reduce((acc, producto) => acc += parseFloat(producto.precio), 0)
+  alert('Total del Pedido: '+ totalPedido)
+  listaPedidos = []
+  guardarLS()
+  return totalPedido
+}
 
 // EventListener para señalar que producto vamos a eliminar
 table.addEventListener("click", (e) => {

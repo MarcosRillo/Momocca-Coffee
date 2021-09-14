@@ -167,7 +167,7 @@ body {
   cursor: pointer;
 }
 
-.wrap-menu .producto-precio {
+.wrap-menu .etiqueta-precio {
   background-color: var(--azul-osc-color);
   color: #fff;
   padding-left: 1em;
