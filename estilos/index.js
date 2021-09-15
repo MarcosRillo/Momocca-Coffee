@@ -104,14 +104,8 @@ const leerLS = () => {
 
 
 // funcion para eliminar producto de la lista
-const eliminarLS = (producto) => {
-  let indexListaPedidos;
-  listaPedidos.forEach((elemento, index) => {
-    if (elemento.producto === producto) {
-      indexListaPedidos = index;
-    }
-  });
-  listaPedidos.splice(indexListaPedidos, 1);
+const eliminarLS = (index) => {
+  listaPedidos.splice(index, 1);
   // guardarLS() guarda el nuevo cambio en LocalStorage
   guardarLS();
 };
@@ -133,8 +127,7 @@ table.addEventListener("click", (e) => {
 
   for (let i = 0; i < botonBorrar.length; i++) {    
     if (e.target === botonBorrar[i]) {
-      let contenido = e.composedPath()[2].innerText || e.path[2].innerText  ;
-      eliminarLS(contenido);
+      eliminarLS(i);
     }    
   }  
 });
