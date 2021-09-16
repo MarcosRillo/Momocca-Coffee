@@ -55,7 +55,7 @@ body {
   margin-right: 2px;
 }
 
-.wrap-mesas .numero-mesa p {
+.wrap-mesas .mesas a.numero-mesa {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,6 +68,16 @@ body {
   border-right: 1px solid var(--naranja-uno-color);
   border-bottom: 1px solid var(--naranja-uno-color);
   border-left: 1px solid var(--naranja-uno-color);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.wrap-mesas .mesas a.numero-mesa:hover {
+  background-color: var(--celeste-uno-color);
+}
+
+.wrap-mesas .mesas a.numero-mesa.activa {
+  background-color: var(--naranja-uno-color);
 }
 
 .wrap-mesas .tabla-pedidos {
@@ -176,7 +186,3 @@ body {
   padding-bottom: 0.5em;
 }
 
-.wrap-menu .producto-precio{
-  margin-right: 0.5em;
-
-}
