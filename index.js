@@ -49,7 +49,6 @@ function configurarBotonesMesas() {
 }
 
 /****** INSERTAR CODIGO A HTML DE LOS PRODUCTOS DEL MENU *******/
-
 class productoMenu {
   constructor(foto, nombre, precio) {
     this.foto = foto;
@@ -138,7 +137,7 @@ function leerPedidosDeLS() {
 }
 
 
-//Cerrar Mesa
+/******* CERRAR MESA **********/
 const cerrarMesa = () => {
   let totalPedido =
   pedidosPorMesa[mesaSeleccionada].reduce((acc, producto) => acc += parseFloat(producto.precio), 0)
@@ -148,7 +147,7 @@ const cerrarMesa = () => {
   return totalPedido
 }
 
-// funcion para eliminar producto de la lista
+/******* ELIMINAR DE LA LISTA **********/
 const eliminarLS = (index) => {
   pedidosPorMesa[mesaSeleccionada].splice(index, 1);
   // guardarPedidosEnLS() guarda el nuevo cambio en LocalStorage
