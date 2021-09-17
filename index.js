@@ -1,4 +1,4 @@
-let listaItems = document.getElementById('lista-items')
+let listaItems = document.getElementById("lista-items");
 let cardProducto = document.getElementsByClassName("card-producto");
 let productos = document.getElementsByClassName("producto");
 let precioProducto = document.getElementsByClassName("producto-precio");
@@ -8,8 +8,6 @@ let botonBorrar = document.getElementsByClassName("fa-times-circle");
 let listaPedidos = JSON.parse(localStorage.getItem("productos")) || [];
 let botonesDeMesas = document.getElementsByClassName("numero-mesa");
 
-
-
 /*********  SELECCION DE MESA ********/
 let pedidosPorMesaDefault = [];
 for (let i = 0; i < botonesDeMesas.length; i++) {
@@ -18,19 +16,19 @@ for (let i = 0; i < botonesDeMesas.length; i++) {
 let pedidosPorMesa;
 let mesaSeleccionada = 0; // inicialmente la mesa seleccionada es la primera
 
-function dibujarListaDePedidos (pedidos) {
+function dibujarListaDePedidos(pedidos) {
   tbody.innerHTML = "";
   pedidos.forEach((element) => {
     tbody.innerHTML += `
       <td><i class="fas fa-times-circle"></i>${element.producto}</td>
-      <td>${element.precio}</td>
+      <td>$${element.precio}</td>
     `;
   });
 }
 
-function marcarComoMesaActiva (indiceMesaActiva) {
+function marcarComoMesaActiva(indiceMesaActiva) {
   for (let i = 0; i < botonesDeMesas.length; i++) {
-    botonesDeMesas[i].classList.toggle('activa', i === indiceMesaActiva);
+    botonesDeMesas[i].classList.toggle("activa", i === indiceMesaActiva);
   }
 }
 
@@ -57,34 +55,68 @@ class productoMenu {
   }
   insertarHTML() {
     listaItems.innerHTML += `
-    <div class="card-producto col-12 col-md-6 col-lg-4">
-            <div class="d-flex flex-column">
-              <img
-                src="${this.foto}"
-                class="img-fluid"
-                alt="foto-chocolatada"
-              />
-              <div class="descripcion">
-                <p class="producto" id="nombreProducto">${this.nombre}</p>
-                <p class="etiqueta-precio">$<span class="producto-precio">${this.precio}</span></p>
-              </div>
-            </div>
+    <div class="card-producto col-12 col-sm-6 col-lg-4 d-flex flex-column">
+       <img
+        src="${this.foto}"
+        class="img-fluid"
+        alt="foto-chocolatada"
+       />
+      <div class="descripcion">
+        <p class="producto" id="nombreProducto">${this.nombre}</p>
+        <p class="etiqueta-precio">$<span class="producto-precio">${this.precio}</span></p>
+      </div>
     </div>
     `;
-    return this
+    return this;
   }
 }
 
-const chocolatada = new productoMenu("https://picsum.photos/250/150", "chocolatada", "100");
-const cafeHelado = new productoMenu("https://picsum.photos/250/150", "cafe heldo", "90");
-const cafeCaliente = new productoMenu("https://picsum.photos/250/150", "cafe caliente", "90");
+const chocolatada = new productoMenu(
+  "https://picsum.photos/250/150",
+  "chocolatada",
+  "100"
+);
+const cafeHelado = new productoMenu(
+  "https://picsum.photos/250/150",
+  "cafe heldo",
+  "90"
+);
+const cafeCaliente = new productoMenu(
+  "https://picsum.photos/250/150",
+  "cafe caliente",
+  "90"
+);
 const jugo = new productoMenu("https://picsum.photos/250/150", "jugo", "80");
-const teFrio = new productoMenu("https://picsum.photos/250/150", "te frio", "70");
-const teCaliente = new productoMenu("https://picsum.photos/250/150", "Te caliente", "70");
-const licuadoConLeche = new productoMenu("https://picsum.photos/250/150", "Licuado con leche", "70");
-const licuadoConAgua = new productoMenu("https://picsum.photos/250/150", "Licuado con agua", "70");
-const tostada = new productoMenu("https://picsum.photos/250/150", "tostada", "70");
-const helado = new productoMenu("https://picsum.photos/250/150", "helado", "70");
+const teFrio = new productoMenu(
+  "https://picsum.photos/250/150",
+  "te frio",
+  "70"
+);
+const teCaliente = new productoMenu(
+  "https://picsum.photos/250/150",
+  "Te caliente",
+  "70"
+);
+const licuadoConLeche = new productoMenu(
+  "https://picsum.photos/250/150",
+  "Licuado con leche",
+  "70"
+);
+const licuadoConAgua = new productoMenu(
+  "https://picsum.photos/250/150",
+  "Licuado con agua",
+  "70"
+);
+const tostada = new productoMenu(
+  "https://picsum.photos/250/150",
+  "tostada",
+  "70"
+);
+const helado = new productoMenu(
+  "https://picsum.photos/250/150",
+  "helado",
+  "70"
+);
 
 chocolatada.insertarHTML();
 cafeHelado.insertarHTML();
@@ -106,12 +138,12 @@ function crearItem(producto, precio) {
 }
 
 //Insertar nombre del producto al array "listaPedidos" al hacer click spbre el
-function configurarBotonesMenu () {
+function configurarBotonesMenu() {
   for (let i = 0; i < cardProducto.length; i++) {
     cardProducto[i].addEventListener("click", insertarItem);
     let producto = productos[i].innerHTML;
     let precio = precioProducto[i].innerHTML;
-  
+
     function insertarItem() {
       if (pedidosPorMesa[mesaSeleccionada].length < 8) {
         crearItem(producto, precio);
@@ -131,21 +163,22 @@ function guardarPedidosEnLS() {
 
 //Insertar en HTML el item al hacer click sobre el
 function leerPedidosDeLS() {
-  pedidosPorMesa = JSON.parse(localStorage.getItem("pedidos"))
-    || pedidosPorMesaDefault;
+  pedidosPorMesa =
+    JSON.parse(localStorage.getItem("pedidos")) || pedidosPorMesaDefault;
   dibujarListaDePedidos(pedidosPorMesa[mesaSeleccionada]);
 }
 
-
 /******* CERRAR MESA **********/
 const cerrarMesa = () => {
-  let totalPedido =
-  pedidosPorMesa[mesaSeleccionada].reduce((acc, producto) => acc += parseFloat(producto.precio), 0)
-  alert('Total del Pedido: '+ totalPedido)
-  pedidosPorMesa[mesaSeleccionada] = []
-  guardarPedidosEnLS()
-  return totalPedido
-}
+  let totalPedido = pedidosPorMesa[mesaSeleccionada].reduce(
+    (acc, producto) => (acc += parseFloat(producto.precio)),
+    0
+  );
+  alert("Total del Pedido: " + totalPedido);
+  pedidosPorMesa[mesaSeleccionada] = [];
+  guardarPedidosEnLS();
+  return totalPedido;
+};
 
 /******* ELIMINAR DE LA LISTA **********/
 const eliminarLS = (index) => {
@@ -158,17 +191,17 @@ const eliminarLS = (index) => {
 table.addEventListener("click", (e) => {
   e.preventDefault;
 
-  for (let i = 0; i < botonBorrar.length; i++) {    
+  for (let i = 0; i < botonBorrar.length; i++) {
     if (e.target === botonBorrar[i]) {
       eliminarLS(i);
-    }    
-  }  
+    }
+  }
 });
 
 // corre las configuraciones iniciales
 function iniciar() {
   configurarBotonesMesas();
-  configurarBotonesMenu ();
+  configurarBotonesMenu();
 }
 
 iniciar();
