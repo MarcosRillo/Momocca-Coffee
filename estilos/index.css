@@ -141,6 +141,13 @@ body {
   border-end-end-radius: 0.5em;
 }
 
+.cerrar-mesa {
+  background-color: #FB8500;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+}
+
 /***  MENU  ***/
 .wrap-menu {
   border-radius: 0.2em;
