@@ -24,6 +24,7 @@ function dibujarListaDePedidos(pedidos) {
       <td>$${element.precio}</td>
     `;
   });
+  document.getElementById('mostrarTotal').innerHTML = `$ `+ calculatTotal()
 }
 
 function marcarComoMesaActiva(indiceMesaActiva) {
@@ -170,15 +171,20 @@ function leerPedidosDeLS() {
 
 /******* CERRAR MESA **********/
 const cerrarMesa = () => {
-  let totalPedido = pedidosPorMesa[mesaSeleccionada].reduce(
-    (acc, producto) => (acc += parseFloat(producto.precio)),
-    0
-  );
+  let totalPedido = calculatTotal()
   alert("Total del Pedido: " + totalPedido);
   pedidosPorMesa[mesaSeleccionada] = [];
   guardarPedidosEnLS();
   return totalPedido;
 };
+
+//sumar total
+function calculatTotal (){
+  return pedidosPorMesa[mesaSeleccionada].reduce(
+    (acc, producto) => (acc += parseFloat(producto.precio)),
+    0
+  );
+}
 
 /******* ELIMINAR DE LA LISTA **********/
 const eliminarLS = (index) => {
