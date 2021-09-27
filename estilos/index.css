@@ -13,22 +13,33 @@
   --azul-osc-color: #023047;
   --naranja-uno-color: #ffb703;
   --naranja-dos-color: #fb8500;
+  --bordo-color: #642828;
 }
 
 body {
+  background-image:url(/images/image-index-coffee2.jpg);
+  background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
   font-family: "Roboto", sans-serif;
+}
+
+nav {
+  border-radius: 0.3em;
 }
 
 /*** MESAS ***/
 .wrap-mesas {
-  background-color: #fff;
   border-radius: 0.2em;
   padding-right: 0;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  
 }
 
 .wrap-mesas .titulo-mesas {
-  background-color: var(--naranja-uno-color);
+  border-radius: 0.3em 0.3em 0 0;
+  background-color: var(--celeste-dos-color);
   font-size: 2em;
   font-weight: 500;
   padding-left: 0.5em;
@@ -46,7 +57,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: var(--celeste-uno-color);
-  height: 4em;
+  height: 3.5em;
   width: 4em;
   margin-bottom: 0;
   color: #fff;
@@ -55,7 +66,7 @@ body {
   margin-right: 2px;
 }
 
-.wrap-mesas .numero-mesa p {
+.wrap-mesas .mesas a.numero-mesa {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,9 +76,21 @@ body {
   margin-bottom: 0;
   color: #fff;
   font-weight: 600;
-  border-right: 1px solid var(--naranja-uno-color);
-  border-bottom: 1px solid var(--naranja-uno-color);
-  border-left: 1px solid var(--naranja-uno-color);
+  margin-bottom: 1px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.wrap-mesas .mesas a:last-child{
+  border-end-start-radius: .8em;
+}
+
+.wrap-mesas .mesas a.numero-mesa:hover {
+  background-color: var(--celeste-uno-color);
+}
+
+.wrap-mesas .mesas a.numero-mesa.activa {
+  background-color: var(--naranja-uno-color);
 }
 
 .wrap-mesas .tabla-pedidos {
@@ -85,9 +108,12 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: var(--celeste-dos-color);
-  height: 4em;
+  height: 3.5em;
   padding: 1em;
+  margin-right: 1px;
+  color: #fff;
 }
+
 
 .wrap-mesas tbody tr {
   display: flex;
@@ -107,15 +133,28 @@ body {
 }
 
 .wrap-mesas .fa-times-circle{
-  margin-right: 1em;
+  margin-right: 0.5em;
   cursor: pointer;
+  transition: all ease .3s;
+}
+.wrap-mesas .fa-times-circle:hover{
+  color: red;
+}
+
+.wrap-mesas button{
+  border-end-end-radius: 0.5em;
+}
+
+.cerrar-mesa {
+  background-color: #FB8500;
+  color: #fff;
+  text-decoration: none;
+  border: none;
 }
 
 /***  MENU  ***/
 .wrap-menu {
-  background-color: #fff;
   border-radius: 0.2em;
-  padding: 1em;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   max-height: 70vh;
   overflow-y: scroll;
@@ -124,7 +163,8 @@ body {
 
 
 .wrap-menu .titulo-menu {
-  background-color: var(--naranja-dos-color);
+  background-color: var(--bordo-color);
+  border-radius: 0.3em 0.3em 0 0;
   font-size: 2em;
   font-weight: 500;
   padding-left: 0.5em;
@@ -135,9 +175,10 @@ body {
 .wrap-menu .card-producto {
   cursor: pointer;
   transition: all 1s ease;
+  border-radius: 1em;
 }
 .wrap-menu .card-producto:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 .wrap-menu .click {
@@ -148,13 +189,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--celeste-uno-color);
+  background-color: var(--naranja-dos-color);
 }
 
 .wrap-menu .descripcion p {
-  font-weight: bold;
   margin-bottom: 0;
   font-size: clamp(1rem, 2vw, 1rem);
+  color: #fff;
 }
 
 .wrap-menu .producto {
@@ -163,12 +204,11 @@ body {
   padding-right: 1em;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  color: var(--azul-osc-color);
   cursor: pointer;
 }
 
 .wrap-menu .etiqueta-precio {
-  background-color: var(--azul-osc-color);
+  background-color: var(--naranja-uno-color);
   color: #fff;
   padding-left: 1em;
   padding-right: 1em;
@@ -176,7 +216,3 @@ body {
   padding-bottom: 0.5em;
 }
 
-.wrap-menu .producto-precio{
-  margin-right: 0.5em;
-
-}

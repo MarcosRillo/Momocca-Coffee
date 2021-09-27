@@ -15,22 +15,38 @@
   </head>
 
   <body class="container-fluid bg-light">
+    <nav class="navbar navbar-light" style="background-color: #8ECAE6;">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">
+          MOMOCCA CAFE
+        </a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="/Momocca-Coffee/images/descarga.png" alt="imagenusuario" width="40" height="40" class="d-inline-block align-text-right">
+            Usuario
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
+          </ul>
+        </li>
+      </div>
+    </nav>
     <main class="d-flex row mt-4">
       <!---    PEDIDOS   --->
-      <section class="wrap-mesas col-12 col-md-4">
+      <section class="wrap-mesas col-12 col-lg-4 mb-4 mb-lg-0">
         <div class="titulo-mesas">Mesas</div>
         <div class="contenedor d-flex">
           <div class="wrap-numeros">
             <div class="numero">
               <p class="N">N°</p>
             </div>
-            <div class="numero-mesa">
-              <p>1</p>
-              <p>2</p>
-              <p>3</p>
-              <p>4</p>
-              <p>5</p>
-            </div>
+            <div class="mesas">
+              <a class="numero-mesa">1</a>
+              <a class="numero-mesa">2</a>
+              <a class="numero-mesa">3</a>
+              <a class="numero-mesa">4</a>
+              <a class="numero-mesa">5</a>
+          </div>
           </div>
           <div class="tabla-pedidos">
             <table class="tabla">
@@ -43,12 +59,12 @@
               <tbody></tbody>
             </table>
           </div>
-          <button onclick="cerrarMesa()">Cerrar Mesa</button>
+          <button onclick="cerrarMesa()" class="cerrar-mesa">Cerrar Mesa</button>
         </div>
       </section>
 
       <!---    MENU   --->
-      <section class="wrap-menu d-flex flex-column col-12 col-md-8">
+      <section class="wrap-menu d-flex flex-column col-12 col-lg-8">
         <div class="titulo-menu">Menu</div>
         <div class="lista-items row gy-3" id="lista-items">
           <!--para rellenar con JS-->
@@ -65,6 +81,6 @@
       src="https://kit.fontawesome.com/289fb0f140.js"
       crossorigin="anonymous"
     ></script>
-    <script src="estilos/index.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

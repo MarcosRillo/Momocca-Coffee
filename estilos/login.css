@@ -12,20 +12,27 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    height: 100vh;
+    width: 100vw;
 }
 
-main {
-    width: 100%;
-    padding: 20px;
-    margin: auto;
-    margin-top: 100px;
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
 }
+
 
 .contenedor__todo {
     width: 100%;
     max-width: 800px;
     margin: auto;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .caja {
