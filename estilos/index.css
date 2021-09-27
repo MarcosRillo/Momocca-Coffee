@@ -189,8 +189,14 @@ tfoot tr #mostrarTotal{
   transition: all 1s ease;
   border-radius: 1em;
 }
+
 .wrap-menu .card-producto:hover {
   transform: scale(1.01);
+}
+
+.wrap-menu .card-producto img{
+  height: 200px;
+  object-fit: cover;
 }
 
 .wrap-menu .click {

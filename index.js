@@ -24,7 +24,7 @@ function dibujarListaDePedidos(pedidos) {
       <td>$${element.precio}</td>
     `;
   });
-  document.getElementById('mostrarTotal').innerHTML = `$ `+ calculatTotal()
+  document.getElementById("mostrarTotal").innerHTML = `$ ` + calculatTotal();
 }
 
 function marcarComoMesaActiva(indiceMesaActiva) {
@@ -72,52 +72,16 @@ class productoMenu {
   }
 }
 
-const chocolatada = new productoMenu(
-  "https://picsum.photos/250/150",
-  "chocolatada",
-  "100"
-);
-const cafeHelado = new productoMenu(
-  "https://picsum.photos/250/150",
-  "cafe heldo",
-  "90"
-);
-const cafeCaliente = new productoMenu(
-  "https://picsum.photos/250/150",
-  "cafe caliente",
-  "90"
-);
-const jugo = new productoMenu("https://picsum.photos/250/150", "jugo", "80");
-const teFrio = new productoMenu(
-  "https://picsum.photos/250/150",
-  "te frio",
-  "70"
-);
-const teCaliente = new productoMenu(
-  "https://picsum.photos/250/150",
-  "Te caliente",
-  "70"
-);
-const licuadoConLeche = new productoMenu(
-  "https://picsum.photos/250/150",
-  "Licuado con leche",
-  "70"
-);
-const licuadoConAgua = new productoMenu(
-  "https://picsum.photos/250/150",
-  "Licuado con agua",
-  "70"
-);
-const tostada = new productoMenu(
-  "https://picsum.photos/250/150",
-  "tostada",
-  "70"
-);
-const helado = new productoMenu(
-  "https://picsum.photos/250/150",
-  "helado",
-  "70"
-);
+const chocolatada = new productoMenu( "images/chocolatada.jpg", "chocolatada", "100");
+const cafeHelado = new productoMenu( "images/cafe-helado.jpg", "Cafe helado", "90");
+const cafeCaliente = new productoMenu("images/cafe.jpg", "Cafe", "90");
+const jugo = new productoMenu("images/cafe-helado.jpg", "jugo", "80");
+const teFrio = new productoMenu("images/te-frio.jpg", "Te frio", "70");
+const teCaliente = new productoMenu("images/te.jpg", "Te", "70");
+const licuadoConLeche = new productoMenu("images/licuado-con-leche.jpg", "Licuado con leche",  "70");
+const licuadoConAgua = new productoMenu("images/licuado-con-agua.jpg", "Licuado con agua",  "70");
+const tostada = new productoMenu("images/tostadas.jpg", "Tostada", "70");
+const helado = new productoMenu("images/helado.jpg", "helado", "70");
 
 chocolatada.insertarHTML();
 cafeHelado.insertarHTML();
@@ -171,7 +135,7 @@ function leerPedidosDeLS() {
 
 /******* CERRAR MESA **********/
 const cerrarMesa = () => {
-  let totalPedido = calculatTotal()
+  let totalPedido = calculatTotal();
   alert("Total del Pedido: " + totalPedido);
   pedidosPorMesa[mesaSeleccionada] = [];
   guardarPedidosEnLS();
@@ -179,7 +143,7 @@ const cerrarMesa = () => {
 };
 
 //sumar total
-function calculatTotal (){
+function calculatTotal() {
   return pedidosPorMesa[mesaSeleccionada].reduce(
     (acc, producto) => (acc += parseFloat(producto.precio)),
     0
