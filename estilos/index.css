@@ -152,6 +152,18 @@ nav {
   border: none;
 }
 
+tfoot tr{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  bottom: 50px;
+}
+
+tfoot tr #total,
+tfoot tr #mostrarTotal{
+  font-weight: bolder;
+}
+
 /***  MENU  ***/
 .wrap-menu {
   border-radius: 0.2em;
